@@ -5,13 +5,22 @@ import org.http4s.sbt.Http4sPlugin._
 import scala.xml.transform.{RewriteRule, RuleTransformer}
 
 // Global settings
-ThisBuild / crossScalaVersions := Seq(scala_3, scala_212, scala_213)
+ThisBuild / crossScalaVersions := Seq(scala_213)
+ThisBuild / githubWorkflowJavaVersions := Seq(JavaSpec.temurin("17"))
+
 ThisBuild / tlBspCrossProjectPlatforms := Set(JVMPlatform)
 ThisBuild / tlBaseVersion := "0.23"
 ThisBuild / developers += tlGitHubDev("rossabaker", "Ross A. Baker")
 
 ThisBuild / tlCiReleaseBranches := Seq("series/0.23")
-ThisBuild / tlSitePublishBranch := Some("series/0.23")
+ThisBuild / tlSitePublishBranch := Some("protosearch")
+ThisBuild / githubWorkflowPublishTargetBranches := Seq()
+ThisBuild / githubWorkflowBuildMatrixExclusions ++=
+  List(
+    MatrixExclude(Map("project" -> "rootJS")),
+    MatrixExclude(Map("project" -> "rootNative")),
+    MatrixExclude(Map("project" -> "rootJVM"))
+  )
 
 ThisBuild / scalafixAll / skip := tlIsScala3.value
 ThisBuild / ScalafixConfig / skip := tlIsScala3.value

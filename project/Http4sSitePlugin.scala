@@ -45,7 +45,7 @@ object Http4sSitePlugin extends AutoPlugin {
 
       val latest = Http4sPlugin.latestPerMinorVersion(baseDirectory.value)
       // helpful to render landing page when previewing locally
-      if (version.value.startsWith("1.") || !isCi.value)
+      if (true)
         landingPage.configure(
           base,
           latest((0, 23)).toString,

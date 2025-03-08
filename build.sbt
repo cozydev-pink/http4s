@@ -19,7 +19,7 @@ ThisBuild / githubWorkflowBuildMatrixExclusions ++=
   List(
     MatrixExclude(Map("project" -> "rootJS")),
     MatrixExclude(Map("project" -> "rootNative")),
-    MatrixExclude(Map("project" -> "rootJVM"))
+    MatrixExclude(Map("project" -> "rootJVM")),
   )
 
 ThisBuild / scalafixAll / skip := tlIsScala3.value

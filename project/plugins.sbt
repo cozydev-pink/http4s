@@ -16,7 +16,3 @@ addSbtPlugin("org.scoverage" % "sbt-scoverage" % "2.3.0")
 addSbtPlugin("com.armanbilge" % "sbt-scala-native-config-brew" % "0.3.0")
 
 libraryDependencySchemes += "com.lihaoyi" %% "geny" % VersionScheme.Always
-
-resolvers +=
-  "Sonatype OSS Snapshots".at("https://s01.oss.sonatype.org/content/repositories/snapshots")
-addSbtPlugin("pink.cozydev" % "protosearch-sbt" % "0.0-bf56dcc-SNAPSHOT")

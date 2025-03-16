@@ -19,4 +19,4 @@ libraryDependencySchemes += "com.lihaoyi" %% "geny" % VersionScheme.Always
 
 resolvers +=
   "Sonatype OSS Snapshots".at("https://s01.oss.sonatype.org/content/repositories/snapshots")
-addSbtPlugin("pink.cozydev" % "protosearch-sbt" % "0.0-fd3e8b2-SNAPSHOT")
+addSbtPlugin("pink.cozydev" % "protosearch-sbt" % "0.0-bf56dcc-SNAPSHOT")

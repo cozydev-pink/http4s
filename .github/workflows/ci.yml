@@ -35,7 +35,6 @@ jobs:
         exclude:
           - project: rootJS
           - project: rootNative
-          - project: rootJVM
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     steps:

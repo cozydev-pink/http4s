@@ -12,5 +12,5 @@ libraryDependencies ++= List(
   "io.circe" %% "circe-generic" % "0.14.8",
   "org.http4s" %% "http4s-ember-client" % "0.23.30",
   "org.http4s" %% "http4s-circe" % "0.23.30",
-  "pink.cozydev" %% "protosearch-laika" % "0.0-bf56dcc-SNAPSHOT",
+  "pink.cozydev" %% "protosearch-laika" % "0.0-87982b9-SNAPSHOT",
 )

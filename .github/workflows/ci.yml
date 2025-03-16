@@ -252,7 +252,7 @@ jobs:
         run: 'nix develop .#${{ matrix.java }} -c sbt +update'
 
       - name: Generate site
-        run: 'nix develop .#${{ matrix.java }} -c sbt site/tlSite && ls -l site/target/docs/site'
+        run: 'nix develop .#${{ matrix.java }} -c sbt site/tlSite && ls -lR site/target/docs/site'
 
       - name: Publish site
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/series/0.23'

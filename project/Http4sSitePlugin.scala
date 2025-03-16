@@ -40,14 +40,14 @@ object Http4sSitePlugin extends AutoPlugin {
     tlSiteHelium := {
       val base = tlSiteHelium.value
         .extendWith(redirects.theme)
-        .extendWith(SearchUI)
-        .extendWith(SearchUI.searchNavBar(_))
         .site
         .internalCSS(Root / "styles")
         .site
         .versions(versions.config(isCi.value))
         .site
         .topNavigationBar(versionMenu = versions.menu("Documentation"))
+        .extendWith(SearchUI)
+        .extendWith(SearchUI.searchNavBar(_))
 
       val latest = Http4sPlugin.latestPerMinorVersion(baseDirectory.value)
       // helpful to render landing page when previewing locally

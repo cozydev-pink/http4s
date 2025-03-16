@@ -16,9 +16,6 @@ import mdoc.MdocPlugin.autoImport._
 import org.typelevel.sbt.TypelevelSitePlugin.autoImport._
 import org.typelevel.sbt.site.GenericSiteSettings
 import Http4sPlugin.autoImport._
-import pink.cozydev.protosearch.analysis.IndexRendererConfig
-import pink.cozydev.protosearch.ui.SearchUI
-import laika.sbt.LaikaPlugin.autoImport._
 
 object Http4sSitePlugin extends AutoPlugin {
 
@@ -36,12 +33,9 @@ object Http4sSitePlugin extends AutoPlugin {
         s"VERSION_${major}_${minor}" -> v.toString
       }
     },
-    laikaRenderers += IndexRendererConfig(includeInSite = true),
     tlSiteHelium := {
       val base = tlSiteHelium.value
         .extendWith(redirects.theme)
-        .extendWith(SearchUI)
-        .extendWith(SearchUI.searchNavBar(_))
         .site
         .internalCSS(Root / "styles")
         .site

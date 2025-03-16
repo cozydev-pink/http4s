@@ -120,7 +120,7 @@ object Http4sSitePlugin extends AutoPlugin {
       .forCurrentVersion(current)
       .withOlderVersions(all.dropWhile(_ != current).drop(1) *)
       .withNewerVersions(all.takeWhile(_ != current) *)
-      //.withRenderUnversioned(current == v1_0 || !isCi)
+    // .withRenderUnversioned(current == v1_0 || !isCi)
     // helpful to render unversioned pages when previewing locally
 
     private def version(version: String, label: String): Version =

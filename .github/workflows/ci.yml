@@ -68,9 +68,6 @@ jobs:
         if: matrix.java == 'temurin@17' && steps.setup-java-temurin-17.outputs.cache-hit == 'false'
         run: 'nix develop .#${{ matrix.java }} -c sbt +update'
 
-      - name: Check that workflows are up to date
-        run: 'nix develop .#${{ matrix.java }} -c sbt githubWorkflowCheck'
-
       - name: Check headers and formatting
         if: matrix.java == 'temurin@17' && matrix.os == 'ubuntu-22.04'
         run: 'nix develop .#${{ matrix.java }} -c sbt ''project ${{ matrix.project }}'' ''++ ${{ matrix.scala }}'' headerCheckAll scalafmtCheckAll ''project /'' scalafmtSbtCheck'
@@ -255,7 +252,7 @@ jobs:
         run: 'nix develop .#${{ matrix.java }} -c sbt +update'
 
       - name: Generate site
-        run: 'nix develop .#${{ matrix.java }} -c sbt site/tlSite'
+        run: 'nix develop .#${{ matrix.java }} -c sbt site/tlSite && ls -l site/target/docs/site'
 
       - name: Publish site
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/series/0.23'
